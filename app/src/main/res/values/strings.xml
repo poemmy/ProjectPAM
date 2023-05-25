@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PROJECT AKHIR PAM</string>
     <string name="reg_now"><u>Register Now</u></string>
+    <string name="kategori"><u>Categories of Product</u></string>
 </resources>

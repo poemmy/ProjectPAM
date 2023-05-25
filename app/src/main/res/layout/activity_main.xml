@@ -7,12 +7,80 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Hello, Name !"
+        android:textColor="#4F705C"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/desc_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="What do you want to buy?"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nama"
+        app:layout_constraintTop_toBottomOf="@+id/nama" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="@+id/desc_buy"
+        app:layout_constraintTop_toBottomOf="@+id/desc_buy"
+        app:srcCompat="@drawable/search" />
+
+    <TextView
+        android:id="@+id/kategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/kategori"
+        android:textColor="#658270"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ListView
+        android:layout_width="339dp"
+        android:layout_height="594dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/kategori" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/filter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
