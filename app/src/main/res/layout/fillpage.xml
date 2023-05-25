@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/judulfill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="20dp"
+        android:paddingTop="30dp"
+        android:text="Form Shopping"
+        android:textColor="#4F705C"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/deskfill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/montserrat"
+        android:paddingLeft="20dp"
+        android:paddingTop="30dp"
+        android:text="Check this form"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:layout_marginTop="40dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deskfill"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        android:paddingBottom="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/idData"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Personal Data"
+                        android:textColor="@color/black"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txName"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/idData"
+                        android:layout_marginTop="20dp"
+                        android:text="Nama Penyewa :"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txName"
+                        android:text="Nama"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#4F705C"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/hslNama"
+                        android:layout_marginTop="10dp"
+                        android:text="Alamat :"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txAlamat"
+                        android:text="Alamat"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#4F705C"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txTlp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/hslAlamat"
+                        android:layout_marginTop="10dp"
+                        android:text="No. Telp/HP :"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/HTelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txTlp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="021"
+                        android:textColor="#4F705C"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/dataShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Shopping Data"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/black"
+                        android:textSize="19sp"/>
+
+                    <TextView
+                        android:id="@+id/txtMerk"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/dataShop"
+                        android:layout_marginTop="20dp"
+                        android:text="Category Products :"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslProduk"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txtMerk"
+                        android:text="Fruit"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#4F705C"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txJumlah"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/hslProduk"
+                        android:layout_marginTop="10dp"
+                        android:text="Amount :"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslJumlah"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txJumlah"
+                        android:text="5"
+                        android:textColor="#4F705C"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txHarga"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_below="@+id/hslJumlah"
+                        android:layout_marginTop="10dp"
+                        android:text="Price :"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslHarga"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_below="@+id/txHarga"
+                        android:text="$5.40"
+                        android:textColor="#4F705C"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txPromo"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_below="@+id/hslHarga"
+                        android:layout_marginTop="10dp"
+                        android:text="Promo :"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslPromo"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txPromo"
+                        android:text="10%"
+                        android:textColor="#4F705C"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_below="@+id/hslPromo"
+                        android:layout_marginTop="10dp"
+                        android:text="Total :"
+                        android:textColor="@android:color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/hslTotal"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txTotal"
+                        android:text="$24.3"
+                        android:textColor="#4F705C"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        app:srcCompat="@drawable/img" />
+
+</RelativeLayout>

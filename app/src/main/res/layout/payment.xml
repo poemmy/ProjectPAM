@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/sukses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="183dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Successful Payment"
+        android:textColor="#1A2E35"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="351dp"
+        android:layout_height="253dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sukses"
+        app:srcCompat="@drawable/payment" />
+
+    <TextView
+        android:id="@+id/desk_pay"
+        android:layout_width="320dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Thank you for paying and purchasing products in our store !!"
+        android:textAlignment="center"
+        android:textColor="#1A2E35"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="277dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_back"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Back to homepage"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desk_pay" />
+</androidx.constraintlayout.widget.ConstraintLayout>
