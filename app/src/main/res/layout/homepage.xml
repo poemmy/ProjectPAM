@@ -70,6 +70,7 @@
         android:paddingBottom="17dp"
         android:shadowColor="#0000"
         android:text="Get Started"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
