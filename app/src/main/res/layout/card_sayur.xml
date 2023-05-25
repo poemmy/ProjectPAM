@@ -54,11 +54,11 @@
                 android:id="@+id/harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="$4.30"
                 android:textSize="23sp"
-                android:layout_marginStart="50dp"
                 app:layout_constraintStart_toStartOf="@+id/barang"
                 app:layout_constraintTop_toBottomOf="@+id/barang" />
 
@@ -79,10 +79,10 @@
                 android:id="@+id/desk_jeruk"
                 android:layout_width="289dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Oranges are a type of low calories, highly nutritious citrus fruits, as apart of healthful and varied diet and oranges contribute to strong and clear skin."
                 android:textSize="13sp"
-                android:layout_marginStart="50dp"
                 app:layout_constraintStart_toStartOf="@+id/deskripsi"
                 app:layout_constraintTop_toBottomOf="@+id/deskripsi" />
         </LinearLayout>
