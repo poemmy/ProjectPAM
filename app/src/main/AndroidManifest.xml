@@ -12,9 +12,6 @@
         android:theme="@style/Theme.PROJECTAKHIRPAM"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -24,13 +21,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomepageActivity"
+            android:name=".LoginActivity"
             android:exported="true" />
+        <activity
+            android:name=".HomepageActivity"
+            android:exported="false" />
         <activity android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity android:name=".RegisterActivity"
-            android:exported="true"/>
-
+            android:exported="false"/>
+        <activity android:name=".BuyerActivity"
+            android:exported="false"/>
+        <activity android:name=".CategoryProductActivity"
+            android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

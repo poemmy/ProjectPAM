@@ -134,12 +134,13 @@
 
     <Button
         android:id="@+id/bck_login"
-        android:layout_width="69dp"
+        android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
+        android:background="@color/white"
         android:fontFamily="@font/montserrat_bold"
+        android:text="back to login"
         android:textColor="#4F705C"
         android:textSize="10dp"
         app:layout_constraintStart_toStartOf="@+id/bg_regis"
