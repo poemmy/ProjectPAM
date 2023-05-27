@@ -13,79 +13,86 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/jeruk"
-                android:layout_width="400dp"
-                android:layout_height="480dp"
-                android:translationY="-10dp"
-                app:srcCompat="@drawable/orange" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/fresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="35dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Freshly Natural"
-                android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/jeruk" />
+                <ImageView
+                    android:id="@+id/jeruk"
+                    android:layout_width="400dp"
+                    android:layout_height="480dp"
+                    android:translationY="-10dp"
+                    app:srcCompat="@drawable/orange" />
 
-            <TextView
-                android:id="@+id/barang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Orange"
-                android:textColor="#E4473C"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/fresh"
-                app:layout_constraintStart_toStartOf="@+id/fresh"
-                android:layout_marginStart="50dp"/>
+                <TextView
+                    android:id="@+id/fresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="52dp"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Freshly Natural"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/jeruk" />
 
-            <TextView
-                android:id="@+id/harga"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="$4.30"
-                android:textSize="23sp"
-                app:layout_constraintStart_toStartOf="@+id/barang"
-                app:layout_constraintTop_toBottomOf="@+id/barang" />
+                <TextView
+                    android:id="@+id/barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Orange"
+                    android:textColor="#E4473C"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="@+id/fresh"
+                    app:layout_constraintStart_toStartOf="@+id/fresh"
+                    android:layout_marginStart="50dp"/>
 
-            <TextView
-                android:id="@+id/deskripsi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Product Description"
-                android:textColor="#E4473C"
-                android:textSize="16sp"
-                android:layout_marginStart="50dp"
-                app:layout_constraintStart_toStartOf="@+id/harga"
-                app:layout_constraintTop_toBottomOf="@+id/harga" />
+                <TextView
+                    android:id="@+id/harga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="$4.30"
+                    android:textSize="23sp"
+                    app:layout_constraintStart_toStartOf="@+id/barang"
+                    app:layout_constraintTop_toBottomOf="@+id/barang" />
 
-            <TextView
-                android:id="@+id/desk_jeruk"
-                android:layout_width="289dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Oranges are a type of low calories, highly nutritious citrus fruits, as apart of healthful and varied diet and oranges contribute to strong and clear skin."
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/deskripsi"
-                app:layout_constraintTop_toBottomOf="@+id/deskripsi" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/deskripsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Product Description"
+                    android:textColor="#E4473C"
+                    android:textSize="16sp"
+                    android:layout_marginStart="50dp"
+                    app:layout_constraintStart_toStartOf="@+id/harga"
+                    app:layout_constraintTop_toBottomOf="@+id/harga" />
+
+                <TextView
+                    android:id="@+id/desk_jeruk"
+                    android:layout_width="289dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Oranges are a type of low calories, highly nutritious citrus fruits, as apart of healthful and varied diet and oranges contribute to strong and clear skin."
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/deskripsi"
+                    app:layout_constraintTop_toBottomOf="@+id/deskripsi" />
+            </LinearLayout>
+
+        </ScrollView>
+
 
     </LinearLayout>
 

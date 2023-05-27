@@ -32,7 +32,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("create table product (" +
                 "name_product text," +
                 "price double," +
-                "description," +
+                "description text," +
                 "primary key(name_product)" +
                 ");" +
                 "");
@@ -49,47 +49,69 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Orange'," +
-                "6.40" +
+                "6.40," +
+                "'Oranges are a type of low calories, " +
+                "highly nutritious citrus fruits, " +
+                "as apart of healthful and varied diet and oranges contribute to strong and clear skin.'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Green Color'," +
-                "3.70" +
+                "3.70," +
+                "'Green Collar are a very good source of vitamins and minerals and also can protect the " +
+                "body from several respiratory viral infections such as flu and colds. Its vitamin C can " +
+                "also help relieve sinus inflammation and reduce the risk of asthma.'"+
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Passion Fruit'," +
-                "8.96" +
+                "8.96," +
+                "'The content in passion fruit in related research contains many potent phytochemicals to " +
+                "kill cancer cells in the body, these phytochemicals include polyphenols, carotenoins and " +
+                "various other beneficial compounds.Sep 18, 2013'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Carrot'," +
-                "2.48" +
+                "2.48," +
+                "'Carrots are a good source of several vitamins and minerals, particularly vitamin A, biotin, vitamin K1, potassium and vitamin B6. " +
+                "In addition, carrots are also rich in beta-carotene. That is why it is not surprising that the benefits of carrots can increase " +
+                "the body is immunity'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Cherry'," +
-                "11.70" +
+                "11.70," +
+                "'Cherries are rich in antioxidants which play an important role in helping to slow down the aging process and combat oxidative stress. " +
+                "Cherries also contain polyphenolic flavonoid compounds known as anthocyanin glycosides which can help prevent blood clots'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Radish'," +
-                "5.24" +
+                "5.24," +
+                "'Radish is a type of vegetable that is rich in fiber and vitamins. This content plays an important role in maintaining digestive health. " +
+                "In addition, radishes also have ingredients that can help prevent constipation and increase the efficiency of absorption of nutrients in the intestine.'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Apple'," +
-                "7.20" +
+                "7.20," +
+                "'Apples are a healthy food that contains almost no fat and are cholesterol free. In addition, it contains high levels of antioxidants, namely plant compounds, " +
+                "such as flavonoids, fiber, water, vitamins and minerals. This one fruit does contain sugar and carbohydrates.'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Pepper'," +
-                "8.96" +
+                "8.96," +
+                "'Pepper contains antioxidants that are quite high. This substance is known to be able to ward off free radicals that damage healthy cells in the body. " +
+                "Damage to these cells can increase the risk of premature aging, heart disease, and cancer'" +
                 "); " +
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Grape'," +
-                "12.50" +
+                "12.50," +
+                "'Grapes are one of the fruits with high levels of copper and vitamin K. Both of these nutrients have important functions in the body related to energy production and blood clotting. " +
+                "Some of the vitamins are also very good for supporting the growth and development of children.'" +
                 "); " +
                 "");
     }
