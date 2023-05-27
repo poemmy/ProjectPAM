@@ -2,7 +2,7 @@ package com.example.projectakhirpam;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -10,7 +10,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.splash_screen_activity);
         Thread welcomeThread = new Thread() {
 
             @Override

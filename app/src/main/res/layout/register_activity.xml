@@ -138,13 +138,12 @@
         android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/montserrat_bold"
-        android:text="back to login"
+        android:hint="back to login"
         android:textColor="#4F705C"
         android:textSize="10dp"
         app:layout_constraintStart_toStartOf="@+id/bg_regis"
-        app:layout_constraintTop_toBottomOf="@+id/button_regis"
-        tools:hint="back to login" />
+        app:layout_constraintTop_toBottomOf="@+id/button_regis" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

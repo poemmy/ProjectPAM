@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class CategoryProductActivity extends AppCompatActivity {
 
     String[] list;
-    ListView
+    ListView a;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.category_product_activity);
     }
 }

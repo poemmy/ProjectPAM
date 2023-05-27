@@ -4,104 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Hello, Name !"
-        android:textColor="#4F705C"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@color/bgpurple">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img" />
-
-    <TextView
-        android:id="@+id/desc_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_start" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="240dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="What do you want to buy?"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/nama"
-        app:layout_constraintTop_toBottomOf="@+id/nama" />
+        android:text="Buy Groceries  Easily With Us"
+        android:textSize="30dp"
+        android:textColor="@color/bgpurple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        tools:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="324dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="If you eat fresh foods that have a living energy, the food return that living energy"
+        android:textAlignment="center"
+        android:textColor="@color/bgpurple"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="275dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintStart_toStartOf="@+id/desc_buy"
-        app:layout_constraintTop_toBottomOf="@+id/desc_buy"
-        app:srcCompat="@drawable/search" />
-
-
-    <TextView
-        android:id="@+id/kategori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/kategori"
-        android:textColor="#658270"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:clipToPadding="false"
-        android:fillViewport="false"
-        android:scrollbars="none"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="250dp">
-
-            <ListView
-                android:id="@+id/listview"
-                android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/kategori" />
-        </LinearLayout>
-    </ScrollView>
-
-
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="39dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/filter" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_shop"
+        app:srcCompat="@drawable/sayur" />
+
+    <Button
+        android:id="@+id/btn_ctg"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_home"
+        android:fontFamily="@font/montserrat_bold"
+        android:hint="Categories"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingLeft="26dp"
+        android:paddingTop="0dp"
+        android:paddingRight="26dp"
+        android:paddingBottom="0dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+    <Button
+        android:id="@+id/btn_shop"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_home"
+        android:fontFamily="@font/montserrat_bold"
+        android:hint="Go Shopping"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingLeft="26dp"
+        android:paddingTop="0dp"
+        android:paddingRight="26dp"
+        android:paddingBottom="0dp"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ctg"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="29dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bt_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="29dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,6 @@ public class BuyerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.data_pembeli);
+        setContentView(R.layout.buyer_activity);
     }
 }

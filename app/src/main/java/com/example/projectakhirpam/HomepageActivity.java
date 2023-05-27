@@ -13,7 +13,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.homepage_activity);
         _btStart = findViewById(R.id.bt_start);
 
         _btStart.setOnClickListener(this);
