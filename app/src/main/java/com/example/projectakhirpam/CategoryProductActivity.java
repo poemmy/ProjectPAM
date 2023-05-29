@@ -15,6 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+
 import com.example.projectakhirpam.helper.DataBaseHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +33,8 @@ public class CategoryProductActivity extends AppCompatActivity {
     String[] list;
 
     ListView listView;
+
+    SearchView search;
 
     Menu menu;
 
@@ -72,12 +76,10 @@ public class CategoryProductActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
         });
 
 
     }
-
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == android.R.id.home) {
             finish();
@@ -85,6 +87,7 @@ public class CategoryProductActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     public void RefreshList() {
         SQLiteDatabase sqLiteDatabase = dbcenter.getReadableDatabase();
@@ -98,15 +101,19 @@ public class CategoryProductActivity extends AppCompatActivity {
         listView = findViewById(R.id.listview);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
         listView.setSelected(true);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
                 final String selection = list[arg2];
                 Intent i = new Intent(CategoryProductActivity.this, DetailProductActivity.class);
-                i.putExtra("name", selection);
+                i.putExtra("name_product", selection);
                 startActivity(i);
 
             }
         });
+
+        ((ArrayAdapter<?>) listView.getAdapter()).notifyDataSetInvalidated();
     }
+
 }

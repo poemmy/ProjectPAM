@@ -50,8 +50,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Orange'," +
                 "6.40," +
-                "'Oranges are a type of low calories, " +
-                "highly nutritious citrus fruits, " +
+                "'Oranges are a type of low calories, highly nutritious citrus fruits, " +
                 "as apart of healthful and varied diet and oranges contribute to strong and clear skin.'" +
                 "); " +
                 "");
