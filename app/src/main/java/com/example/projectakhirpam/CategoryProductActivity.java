@@ -59,6 +59,7 @@ public class CategoryProductActivity extends AppCompatActivity {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser =auth.getCurrentUser();
+        SearchView searchView = findViewById(R.id.searchView);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference reference = db.getReference("users").child(currentUser.getUid());
@@ -75,6 +76,19 @@ public class CategoryProductActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return false;
             }
         });
 
@@ -114,6 +128,20 @@ public class CategoryProductActivity extends AppCompatActivity {
         });
 
         ((ArrayAdapter<?>) listView.getAdapter()).notifyDataSetInvalidated();
+    }
+
+    public void filterList(String query) {
+        SQLiteDatabase sqLiteDatabase = dbcenter.getReadableDatabase();
+        cursor = sqLiteDatabase.rawQuery("SELECT name_product FROM product WHERE name_product LIKE ?", new String[]{"%" + query + "%"});
+        list = new String[cursor.getCount()];
+        cursor.moveToFirst();
+        for(int i = 0; i < cursor.getCount(); i++){
+            cursor.moveToPosition(i);
+            list[i] = cursor.getString(0);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
+        listView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
 }

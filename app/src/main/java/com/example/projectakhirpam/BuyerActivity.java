@@ -2,6 +2,7 @@ package com.example.projectakhirpam;
 
 import static android.R.layout.simple_list_item_1;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,12 +24,13 @@ import com.example.projectakhirpam.helper.DataBaseHelper;
 
 public class BuyerActivity extends AppCompatActivity {
 
-    String[] daftar;
+    String[] list;
     int[] id;
-    ListView ListView1;
+    ListView listView;
     Menu menu;
     protected Cursor cursor;
     DataBaseHelper dbcenter;
+    @SuppressLint("StaticFieldLeak")
     public static BuyerActivity m;
 
     @Override
@@ -36,9 +38,9 @@ public class BuyerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buyer_activity);
 
-        Button tambah = findViewById(R.id.addPembeli);
+        Button add = findViewById(R.id.addPembeli);
 
-        tambah.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(BuyerActivity.this, FormActivity.class);
@@ -66,23 +68,23 @@ public class BuyerActivity extends AppCompatActivity {
     public void RefreshList() {
         SQLiteDatabase db = dbcenter.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM buyers", null);
-        daftar = new String[cursor.getCount()];
+        list = new String[cursor.getCount()];
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(0);
+            list[i] = cursor.getString(0);
         }
 
-        ListView1 = findViewById(R.id.listView1);
-        ListView1.setAdapter(new ArrayAdapter(this, simple_list_item_1, daftar));
-        ListView1.setSelected(true);
-        ListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView = findViewById(R.id.listView1);
+        listView.setAdapter(new ArrayAdapter(this, simple_list_item_1, list));
+        listView.setSelected(true);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
-                final String selection = daftar[arg2];
-                final CharSequence[] dialogitem = {"Lihat Data", "Hapus Data"};
+                final String selection = list[arg2];
+                final CharSequence[] dialogitem = {"Check Data", "Delete Data", "Confirm Payment"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(BuyerActivity.this);
-                builder.setTitle("Pilihan");
+                builder.setTitle("Select");
                 builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {
@@ -99,13 +101,18 @@ public class BuyerActivity extends AppCompatActivity {
                                 RefreshList();
                                 break;
                             }
+                            case 2: {
+                                Intent cp = new Intent(BuyerActivity.this, PaymentActivity.class);
+                                startActivity(cp);
+                                break;
+                            }
                         }
                     }
                 });
                 builder.create().show();
             }
         });
-        ((ArrayAdapter) ListView1.getAdapter()).notifyDataSetInvalidated();
+        ((ArrayAdapter) listView.getAdapter()).notifyDataSetInvalidated();
 
     }
 }

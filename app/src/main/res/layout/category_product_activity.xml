@@ -40,15 +40,24 @@
         app:layout_constraintStart_toStartOf="@+id/Display"
         app:layout_constraintTop_toBottomOf="@+id/Display" />
 
-
-    <ImageView
-        android:id="@+id/imageView2"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        app:iconifiedByDefault="false"
         android:layout_width="275dp"
         android:layout_height="44dp"
         android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="@+id/desc_buy"
         app:layout_constraintTop_toBottomOf="@+id/desc_buy"
-        app:srcCompat="@drawable/search" />
+        tools:ignore="MissingConstraints" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="275dp"-->
+<!--        android:layout_height="44dp"-->
+<!--        android:layout_marginTop="17dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/desc_buy"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/desc_buy"-->
+<!--        app:srcCompat="@drawable/search" />-->
 
 
     <TextView
@@ -60,8 +69,8 @@
         android:text="@string/kategori"
         android:textColor="#658270"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <ScrollView
         android:layout_width="match_parent"

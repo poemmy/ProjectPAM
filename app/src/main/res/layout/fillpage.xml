@@ -159,7 +159,7 @@
                         android:textSize="19sp"/>
 
                     <TextView
-                        android:id="@+id/txtMerk"
+                        android:id="@+id/txProduct"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_below="@+id/dataShop"
@@ -173,7 +173,7 @@
                         android:id="@+id/hslProduk"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:layout_below="@+id/txtMerk"
+                        android:layout_below="@+id/txProduct"
                         android:text="Fruit"
                         android:fontFamily="@font/montserrat"
                         android:textColor="#4F705C"

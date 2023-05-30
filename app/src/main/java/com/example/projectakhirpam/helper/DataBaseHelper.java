@@ -64,7 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "");
         sqLiteDatabase.execSQL("insert into product values (" +
                 "'Passion Fruit'," +
-                "8.96," +
+                "8.98," +
                 "'The content in passion fruit in related research contains many potent phytochemicals to " +
                 "kill cancer cells in the body, these phytochemicals include polyphenols, carotenoins and " +
                 "various other beneficial compounds.Sep 18, 2013'" +
