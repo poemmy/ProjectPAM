@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/titleFormUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="36dp"
+        android:paddingTop="20dp"
+        android:text="Form Shopping"
+        android:textSize="25dp"
+        tools:textColor="#4F705C" />
+
+    <TextView
+        android:id="@+id/descFormUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:fontFamily="@font/poppins"
+        android:paddingLeft="36dp"
+        android:paddingTop="60dp"
+        android:text="Please fill the form ! "
+        android:textSize="18dp"
+        tools:textColor="@color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleFormUpdate"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        android:paddingBottom="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#75000000"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/dataPersonalUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/work_sans_semibold"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="20dp"
+                        android:text="Personal Data"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/descDataPersonalUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="80dp"
+                        android:text="Fill Personal Data"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dataName"
+                        android:layout_width="295dp"
+                        android:layout_height="44dp"
+                        android:layout_below="@+id/descDataPersonalUpdate"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/btn_data"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Full Name"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/dataAddressUpdate"
+                        android:layout_width="295dp"
+                        android:layout_height="44dp"
+                        android:layout_below="@+id/dataName"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="17dp"
+                        android:background="@drawable/btn_data"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Address"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/dataPhoneUpdate"
+                        android:layout_width="295dp"
+                        android:layout_height="44dp"
+                        android:layout_below="@+id/dataAddressUpdate"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="17dp"
+                        android:background="@drawable/btn_data"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Phone Number"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16dp"
+                        android:inputType="phone" />
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#75000000"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/dataShoppingUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/work_sans_semibold"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="20dp"
+                        android:text="Shopping Data"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/categoriesFormUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="80dp"
+                        android:text="Category Products"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerFormUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/categoriesFormUpdate"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp" />
+
+                    <TextView
+                        android:id="@+id/amountFormUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:layout_below="@+id/spinnerFormUpdate"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="15dp"
+                        android:text="Amount"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dataAmountUpdate"
+                        android:layout_width="295dp"
+                        android:layout_height="44dp"
+                        android:layout_below="@+id/amountFormUpdate"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/btn_data"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Ammount of Product"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/promoFormUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:layout_below="@+id/dataAmountUpdate"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="20dp"
+                        android:text="Promo"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/promoGroupUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/promoFormUpdate"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/prWeekDayUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:fontFamily="@font/poppins"
+                            android:text="Weekday (5%)"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/prWeekEndUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/poppins"
+                            android:layout_weight="1"
+                            android:text="Weekend (15%)"
+                            android:textColor="@color/black" />
+
+                    </RadioGroup>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateForm"
+                android:layout_width="277dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_regis"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="update"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:backgroundTint="@color/bgpurple"
+                app:cornerRadius="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/profileUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        app:srcCompat="@drawable/img" />
+
+
+</RelativeLayout>
