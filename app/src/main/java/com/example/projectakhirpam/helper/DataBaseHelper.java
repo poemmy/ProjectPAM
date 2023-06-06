@@ -1,11 +1,13 @@
 package com.example.projectakhirpam.helper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,13 +117,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "");
     }
 
-    public List<String> getAllCategorries(){
+    public List<String> getAllCategories() {
         List<String> categories = new ArrayList<String>();
         String selectQuery = "select * from product";
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery(selectQuery,null);
+        Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, null);
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 categories.add(cursor.getString(0));
             }
@@ -131,6 +133,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         sqLiteDatabase.close();
         return categories;
+    }
+
+    public void updateShopName(String oldName, String newName) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", newName);
+        database.update("shop", values, "name = ?", new String[]{oldName});
+        database.close();
     }
 
     @Override

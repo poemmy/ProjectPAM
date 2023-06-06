@@ -11,24 +11,22 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.example.projectakhirpam.R;
 import com.example.projectakhirpam.helper.DataBaseHelper;
 
-public class FillpageActivity extends AppCompatActivity  {
+public class FillpageActivity extends AppCompatActivity {
 
     String sName, sAddress, sPhone, sProduct, sPrice;
-
     int iAmount, iDiscount;
-
     double iTotal, dTotal;
 
     protected Cursor cursor;
-
     DataBaseHelper dataBaseHelper;
+    TextView tvTotal;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fillpage);
 
@@ -37,7 +35,7 @@ public class FillpageActivity extends AppCompatActivity  {
         SQLiteDatabase sqLiteDatabase = dataBaseHelper.getReadableDatabase();
         cursor = sqLiteDatabase.rawQuery("select * from buyers, product, shop where buyers.name = shop.name " +
                 "AND product.name_product = shop.name_product " +
-                "AND buyers.name = '" + getIntent().getStringExtra("name") + "'",null);
+                "AND buyers.name = '" + getIntent().getStringExtra("name") + "'", null);
 
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
@@ -52,16 +50,14 @@ public class FillpageActivity extends AppCompatActivity  {
             dTotal = cursor.getDouble(10);
         }
 
-
         TextView tvName = findViewById(R.id.hslNama);
         TextView tvAddress = findViewById(R.id.hslAlamat);
         TextView tvPhone = findViewById(R.id.HTelp);
         TextView tvProduct = findViewById(R.id.hslProduk);
-
         TextView tvPrice = findViewById(R.id.hslHarga);
         TextView tvAmount = findViewById(R.id.hslJumlah);
         TextView tvDiscount = findViewById(R.id.hslPromo);
-        TextView tvTotal = findViewById(R.id.hslTotal);
+        tvTotal = findViewById(R.id.hslTotal);
 
         tvName.setText("     " + sName);
         tvAddress.setText("     " + sAddress);
@@ -70,7 +66,12 @@ public class FillpageActivity extends AppCompatActivity  {
         tvPrice.setText("      $ " + sPrice);
         tvAmount.setText("     " + iAmount);
         tvDiscount.setText("    " + iDiscount + "%");
-        iTotal = dTotal;
+
+        updateTotal();
+    }
+
+    private void updateTotal() {
+        iTotal = iAmount * Double.parseDouble(sPrice) * (100 - iDiscount) / 100;
         tvTotal.setText("      $ " + iTotal);
     }
 
@@ -81,5 +82,4 @@ public class FillpageActivity extends AppCompatActivity  {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

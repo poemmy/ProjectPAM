@@ -141,7 +141,7 @@ public class FormActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void loadSpinnerData() {
         DataBaseHelper dbh = new DataBaseHelper(getApplicationContext());
-        List<String> categories = dbh.getAllCategorries();
+        List<String> categories = dbh.getAllCategories();
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -82,10 +82,11 @@ public class BuyerActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
                 final String selection = list[arg2];
-                final CharSequence[] dialogitem = {"Check Data", "Delete Data", "Confirm Payment"};
+                final CharSequence[] dialogitem = {"Check Data", "Delete Data", "Confirm Payment","Update Data"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(BuyerActivity.this);
                 builder.setTitle("Select");
                 builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
+                    @SuppressLint("Range")
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {
                             case 0: {
@@ -104,6 +105,12 @@ public class BuyerActivity extends AppCompatActivity {
                             case 2: {
                                 Intent cp = new Intent(BuyerActivity.this, PaymentActivity.class);
                                 startActivity(cp);
+                                break;
+                            }
+                            case 3: {
+                                Intent up = new Intent(BuyerActivity.this, FormUpdateActivity.class);
+                                up.putExtra("name", selection);
+                                startActivity(up);
                                 break;
                             }
                         }

@@ -43,6 +43,8 @@
             android:exported="false"/>
         <activity android:name=".PaymentActivity"
             android:exported="false"/>
+        <activity android:name=".FormUpdateActivity"
+            android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
