@@ -13,7 +13,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="36dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Hello, Name !"
+        android:text="Hello, Name!"
         android:textColor="#4F705C"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,16 +50,6 @@
         app:layout_constraintTop_toBottomOf="@+id/desc_buy"
         tools:ignore="MissingConstraints" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView2"-->
-<!--        android:layout_width="275dp"-->
-<!--        android:layout_height="44dp"-->
-<!--        android:layout_marginTop="17dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/desc_buy"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/desc_buy"-->
-<!--        app:srcCompat="@drawable/search" />-->
-
-
     <TextView
         android:id="@+id/kategori"
         android:layout_width="wrap_content"
@@ -72,34 +62,15 @@
         app:layout_constraintStart_toStartOf="@+id/searchView"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="40dp"
-        android:clipToPadding="false"
-        android:fillViewport="false"
-        android:scrollbars="none"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="250dp">
-
-            <ListView
-                android:id="@+id/listview"
-                android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/kategori" />
-        </LinearLayout>
-    </ScrollView>
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kategori" />
 
     <ImageView
         android:id="@+id/imageView10"

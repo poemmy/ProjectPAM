@@ -21,6 +21,7 @@ public class DetailProductActivity extends AppCompatActivity {
     String jProduct, jPrice, jImage, jDesc;
 
     DataBaseHelper dataBaseHelper;
+
     @SuppressLint({"DiscouragedApi", "SetTextI18n"})
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,7 +88,6 @@ public class DetailProductActivity extends AppCompatActivity {
         tvProduct.setText(jProduct);
         tvPrice.setText("$" + jPrice);
         tvDesc.setText(jDesc);
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

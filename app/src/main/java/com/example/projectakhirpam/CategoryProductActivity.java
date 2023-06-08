@@ -9,13 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projectakhirpam.helper.DataBaseHelper;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,24 +27,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CategoryProductActivity extends AppCompatActivity {
 
     TextView fname;
-
-    String[] list;
-
-    ListView listView;
-
+    List<String> productList;
+    RecyclerView recyclerView;
     SearchView search;
-
     Menu menu;
-
     protected Cursor cursor;
-
     DataBaseHelper dbcenter;
-
-    @SuppressLint("StaticFieldLeak")
     public static CategoryProductActivity ct;
+    ProductAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -55,10 +52,14 @@ public class CategoryProductActivity extends AppCompatActivity {
         dbcenter = new DataBaseHelper(this);
         fname = findViewById(R.id.Display);
 
-        RefreshList();
+        productList = new ArrayList<>();
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new ProductAdapter(this, productList);
+        recyclerView.setAdapter(adapter);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser =auth.getCurrentUser();
+        FirebaseUser currentUser = auth.getCurrentUser();
         SearchView searchView = findViewById(R.id.searchView);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -68,7 +69,7 @@ public class CategoryProductActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                if(user != null){
+                if (user != null) {
                     fname.setText(user.fn);
                 }
             }
@@ -92,56 +93,56 @@ public class CategoryProductActivity extends AppCompatActivity {
             }
         });
 
+        adapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                String productName = productList.get(position);
+                // Navigasi ke DetailProductActivity dengan mengirimkan nama produk yang dipilih
+                Intent intent = new Intent(CategoryProductActivity.this, DetailProductActivity.class);
+                intent.putExtra("name_product", productName);
+                startActivity(intent);
+            }
+        });
 
+        RefreshList();
     }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home) {
+        if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-
     public void RefreshList() {
         SQLiteDatabase sqLiteDatabase = dbcenter.getReadableDatabase();
         cursor = sqLiteDatabase.rawQuery("SELECT * FROM product", null);
-        list = new String[cursor.getCount()];
+        productList.clear();
         cursor.moveToFirst();
-        for(int i = 0; i < cursor.getCount(); i++){
-            cursor.moveToPosition(i);
-            list[i] = cursor.getString(0);
+        while (!cursor.isAfterLast()) {
+            @SuppressLint("Range") String productName = cursor.getString(cursor.getColumnIndex("name_product"));
+            productList.add(productName);
+            cursor.moveToNext();
         }
-        listView = findViewById(R.id.listview);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
-        listView.setSelected(true);
+        cursor.close();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
-                final String selection = list[arg2];
-                Intent i = new Intent(CategoryProductActivity.this, DetailProductActivity.class);
-                i.putExtra("name_product", selection);
-                startActivity(i);
-
-            }
-        });
-
-        ((ArrayAdapter<?>) listView.getAdapter()).notifyDataSetInvalidated();
+        adapter.notifyDataSetChanged();
     }
 
     public void filterList(String query) {
         SQLiteDatabase sqLiteDatabase = dbcenter.getReadableDatabase();
         cursor = sqLiteDatabase.rawQuery("SELECT name_product FROM product WHERE name_product LIKE ?", new String[]{"%" + query + "%"});
-        list = new String[cursor.getCount()];
+        productList.clear();
         cursor.moveToFirst();
-        for(int i = 0; i < cursor.getCount(); i++){
-            cursor.moveToPosition(i);
-            list[i] = cursor.getString(0);
+        while (!cursor.isAfterLast()) {
+            @SuppressLint("Range") String productName = cursor.getString(cursor.getColumnIndex("name_product"));
+            productList.add(productName);
+            cursor.moveToNext();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
-        listView.setAdapter(adapter);
+        cursor.close();
+
         adapter.notifyDataSetChanged();
     }
-
 }
