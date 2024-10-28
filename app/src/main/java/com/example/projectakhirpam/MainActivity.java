@@ -1,5 +1,7 @@
 package com.example.projectakhirpam;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:700450240193:android:d87040225ad27499d5c640",
+        "android_client_info": {
+          "package_name": "com.example.mydrivia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700450240193-b72t9ref5ebv6alvi0lqctforu9qa20u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mydrivia",
+            "certificate_hash": "43032e0ae3588723c2d0c4afe55dafd26814db0f"
+          }
+        },
+        {
+          "client_id": "700450240193-l7e67vnuigocu3tk0drkigcakccrdme5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcctas_mmwmL8KFsWRtUS-gRi4YQTXuSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700450240193-fcft9a740duce8r3ltrhr5le9ud6mfsq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:700450240193:android:fa619181b8292bedd5c640",
         "android_client_info": {
           "package_name": "com.example.projectakhirpam"
